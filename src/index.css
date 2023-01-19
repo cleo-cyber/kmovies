@@ -1,0 +1,41 @@
+:root{
+  --dark-blue: hsl(229, 31%, 21%);
+  --soft-blue: hsla(231, 69%, 60%);
+  --light-gray-blue: hsla(229, 8%, 60%, 0.1);
+  --gray-blue: hsla(229, 8%, 60%);
+  
+}
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  list-style: none;
+  color: rgba(0, 0, 0, 0.904);
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background:var(--light-gray-blue); */
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav{
+  background: var(--light-gray-blue);
+  width: 100%;
+  
+}
+
+.hero_opacity{
+
+ background-image: url('./assets/bg.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+}
