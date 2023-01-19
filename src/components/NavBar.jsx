@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import { NavLink } from "react-router-dom"
 
 function NavBar() {
   return (
@@ -10,10 +10,10 @@ function NavBar() {
         </div>
         <div className="links">
           <ul>
-            <li>Home</li>
-            <li>Movies</li>
-            <li>Shows</li>
-            <li>Most Viewed</li>
+            <NavLink to={'/'}>Home</NavLink>
+            <NavLink to={'/movies/'}>Movies</NavLink>
+            <NavLink to={'/Shows'}>Shows</NavLink>
+            <NavLink to={'/popular'}>Most Viewed</NavLink>
           </ul>
         </div>
 

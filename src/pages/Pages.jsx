@@ -1,12 +1,15 @@
-import NavBar from "../components/NavBar"
+import SearchItem from "./Search"
 import Home from "./Home"
+import { Route,Routes } from "react-router-dom"
 
 function Pages() {
   return (
-    <div>
-        <NavBar />
-        <Home />
-    </div>
+    <Routes>
+       
+       <Route path="/" element={ <Home />}/>
+       <Route path="/Searched/:search" element={<SearchItem />}/>
+       
+    </Routes>
   )
 }
 

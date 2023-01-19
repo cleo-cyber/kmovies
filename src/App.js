@@ -1,10 +1,14 @@
 import Pages from "./pages/Pages";
-
+import Search from "./components/SearchedItem";
+import NavBar from "./components/NavBar";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <div>
+    <BrowserRouter>
+      <NavBar />
+      <Search />
       <Pages />
-    </div>
+    </BrowserRouter>
   );
 }
 

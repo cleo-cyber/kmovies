@@ -12,7 +12,7 @@ function Popular() {
     const [popularShows, setPopularShows] = useState([]);
 
     const getPopular = async () => {
-        const api = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=c5d347757137ff301ab62f6ccdb824b8&language=en-US&page=1`);
+        const api = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
         const data = await api.json();
         setPopularShows(data.results);
     }
@@ -29,6 +29,21 @@ function Popular() {
                 drag:"free",
                 pagination:false,
                 gap:'5rem',
+                snap:true,
+                breakpoints:{
+                    1201:{
+                        perPage:4,
+                    },
+                    1024:{
+                        perPage:4,
+                    },
+                    768:{
+                        perPage:3,
+                    },
+                    480:{
+                        perPage:1,
+                    }
+                }
             }}>
                 {popularShows.map((popular) => {
 

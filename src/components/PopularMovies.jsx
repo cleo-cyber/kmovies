@@ -12,7 +12,7 @@ function Popular() {
     const [popularMovies, setPopular] = useState([]);
 
     const getPopular = async () => {
-        const api = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=c5d347757137ff301ab62f6ccdb824b8&language=en-US&page=1`);
+        const api = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
         const data = await api.json();
         setPopular(data.results);
     }
@@ -29,11 +29,23 @@ function Popular() {
                 drag:"free",
                 pagination:false,
                 gap:'5rem',
+                snap:true,
+                breakpoints:{
+                    1024:{
+                        perPage:5,
+                    },
+                    768:{
+                        perPage:2,
+                    },
+                    480:{
+                        perPage:1,
+                    }
+                }
             }}>
                 {popularMovies.map((popular) => {
 
                     return (
-                        <SplideSlide key={popular.id}>
+                        <SplideSlide key={popular.id} className="movie">
                         <Card >
                            
                             <img src={getPosterPath(popular.poster_path)} alt="Poster"

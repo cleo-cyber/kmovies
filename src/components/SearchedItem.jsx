@@ -1,8 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import bg from '../assets/bg.jpg'
+import { useState } from 'react'
 
+import { useNavigate } from 'react-router-dom';
 function Search() {
+
+
+
+    const navigate=useNavigate()
+    const [getInput,setInput]=useState("");
+
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        navigate("/Searched/"+getInput)
+
+    }
+
     return (
         <div>
             <div className='hero_opacity'>
@@ -11,9 +25,10 @@ function Search() {
                         <h1>Welcome</h1>
                         <p>Explore every movie taste for free</p>
                     </InnerContainer>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
 
-                        <input type="text" />
+                        <input onChange={(e)=>setInput(e.target.value)} type="text" value={getInput}/>
+                      
                     </Form>
                 </HeroBackground>
 
