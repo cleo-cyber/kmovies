@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import '@splidejs/react-splide/css';
 import { useState, useEffect } from "react"
+import { Fade } from "react-reveal";
 
 function Popular() {
 
@@ -23,6 +24,7 @@ function Popular() {
     return (
         <Wrapper>
             <h2>Popular Shows</h2>
+            <Fade bottom>
             <Splide options={{
                 perPage:4,
                 arrows:false,
@@ -63,6 +65,7 @@ function Popular() {
                     )
                 })}
             </Splide>
+            </Fade>
         </Wrapper>
     )
 }

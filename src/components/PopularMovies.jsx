@@ -2,7 +2,8 @@ import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import '@splidejs/react-splide/css';
 import { useState, useEffect } from "react"
-
+import { Link } from "react-router-dom";
+import { Fade } from "react-reveal";
 function Popular() {
 
     const getPosterPath = (posterpath) => {
@@ -23,6 +24,7 @@ function Popular() {
     return (
         <Wrapper>
             <h2>Popular Movies</h2>
+            <Fade bottom>
             <Splide options={{
                 perPage:5,
                 arrows:false,
@@ -47,7 +49,7 @@ function Popular() {
                     return (
                         <SplideSlide key={popular.id} className="movie">
                         <Card >
-                           
+                           <Link to={'/popular/'+popular.id}>
                             <img src={getPosterPath(popular.poster_path)} alt="Poster"
                              />
                             <Heading2>{popular.title}</Heading2>
@@ -55,11 +57,13 @@ function Popular() {
                             <p>{popular.release_date}</p>
                             <p>ratings :{popular.vote_average}</p>
                             </Vote>
+                            </Link>
                         </Card>
                         </SplideSlide>
                     )
                 })}
             </Splide>
+            </Fade>
         </Wrapper>
     )
 }

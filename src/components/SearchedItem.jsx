@@ -27,7 +27,7 @@ function Search() {
                     </InnerContainer>
                     <Form onSubmit={handleSubmit}>
 
-                        <input onChange={(e)=>setInput(e.target.value)} type="text" value={getInput}/>
+                        <input onChange={(e)=>setInput(e.target.value)} type="text" value={getInput} placeholder="Search your movie/show here..."/>
                       
                     </Form>
                 </HeroBackground>
@@ -72,6 +72,8 @@ input{
     border-radius;1rem
     outline:none;
     width:100%;
+    padding:2rem 4rem;
+    border-radius:1rem;
     
 }
 `
